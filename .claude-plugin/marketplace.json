@@ -1,0 +1,5 @@
+{
+  "name": "mapwright",
+  "owner": { "name": "MOHJRNL" },
+  "plugins": [{ "name": "mapwright", "source": "./" }]
+}

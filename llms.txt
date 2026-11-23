@@ -1,0 +1,8 @@
+# Mapwright
+
+> Claude Code plugin. /codemap scans up to 400 TypeScript, JavaScript and Python files and writes CODEMAP.md: each file's local imports and the most-imported files. Regex-based, runs locally, uses no model tokens.
+
+Install (Claude Code): /plugin install mapwright --marketplace MOHJRNL/mapwright
+
+## Docs
+- [README](README.md): limits, install, FAQ
