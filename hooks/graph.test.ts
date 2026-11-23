@@ -1,6 +1,6 @@
 import { expect, test } from 'claude-code/testing'
 
-import { buildGraph, importsOf, resolve } from './graph'
+import { buildGraph, importsOf, isSkippedDir, resolve } from './graph'
 
 test('TypeScript and Python imports are read', () => {
   const ts = "import a from './a'\nexport { b } from './b.js'\nconst c = require('./c')\nimport('./d')\nimport x from 'react'"
@@ -26,4 +26,9 @@ test('the graph counts edges and lists hubs', () => {
   expect(g.deps.get('a.ts')).toEqual(['c.ts'])
   expect(g.deps.get('c.ts')).toEqual([])
   expect(g.files).toEqual(['a.ts', 'b.ts', 'c.ts'])
+})
+
+test('dependency, build and dot folders are skipped', () => {
+  for (const name of ['node_modules', 'dist', '.git', '.claude-plugin', '.venv']) expect(isSkippedDir(name)).toBe(true)
+  for (const name of ['src', 'lib', 'hooks']) expect(isSkippedDir(name)).toBe(false)
 })

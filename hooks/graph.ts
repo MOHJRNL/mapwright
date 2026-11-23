@@ -1,4 +1,7 @@
-export const SKIP_DIRS = new Set(['node_modules', '.git', 'dist', 'build', '.next', 'coverage', '__pycache__', '.venv', 'venv', 'vendor'])
+export const SKIP_DIRS = new Set(['node_modules', 'dist', 'build', '.next', 'coverage', '__pycache__', 'venv', 'vendor'])
+
+/** Folders skipped by name, and every dot-folder (.git, .venv, .claude-plugin, ...). */
+export const isSkippedDir = (name: string): boolean => SKIP_DIRS.has(name) || name.startsWith('.')
 export const SOURCE = /\.(tsx?|jsx?|mjs|cjs|py)$/
 
 export type Source = { path: string; text: string }

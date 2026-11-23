@@ -1,6 +1,6 @@
 import type { EngineInterface, Register } from 'claude-code'
 
-import { SKIP_DIRS, SOURCE, buildGraph, render } from './graph'
+import { SOURCE, buildGraph, isSkippedDir, render } from './graph'
 import type { Source } from './graph'
 
 const MAX_FILES = 400
@@ -13,7 +13,7 @@ async function walk($: EngineInterface, dir: string, out: string[]): Promise<voi
     if (out.length >= MAX_FILES) return
     const p = dir === '' ? en.name : `${dir}/${en.name}`
     if (en.kind === 'dir') {
-      if (!SKIP_DIRS.has(en.name)) await walk($, p, out)
+      if (!isSkippedDir(en.name)) await walk($, p, out)
     } else if (en.kind === 'file' && SOURCE.test(en.name)) {
       out.push(p)
     }

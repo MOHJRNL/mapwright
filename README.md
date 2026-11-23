@@ -14,7 +14,7 @@
 ## Features
 
 - **`/codemap`** scans up to 400 source files under the working directory: `.ts`, `.tsx`, `.js`, `.jsx`, `.mjs`, `.cjs` and `.py`.
-- **Skips** `node_modules`, `.git`, `dist`, `build`, `.next`, `coverage`, `__pycache__`, `.venv`, `venv` and `vendor`.
+- **Skips** `node_modules`, `dist`, `build`, `.next`, `coverage`, `__pycache__`, `venv`, `vendor`, and every dot-folder (`.git`, `.venv`, `.claude-plugin`, ...).
 - **Reads** up to 64 KB of each file.
 - **Output:** `CODEMAP.md` with totals, the top 10 most-imported files, and each file's local imports.
 - **Zero model tokens.** Everything runs in the plugin. Nothing is sent anywhere.
