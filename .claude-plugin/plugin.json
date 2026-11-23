@@ -1,6 +1,6 @@
 {
   "name": "mapwright",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Local code map (replaces Graphify): /codemap writes CODEMAP.md with local imports and most-imported files. No model calls.",
   "author": {
     "name": "Noah Hendy"
