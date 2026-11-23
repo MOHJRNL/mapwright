@@ -71,6 +71,12 @@ claude plugin test ./
 
 A recorded test run on a fresh clone: see [TEST-PROOF.md](TEST-PROOF.md).
 
+## What it sends and writes
+
+- **Reads:** source files under the folder where you run `/codemap`, to find the imports between them. Dependency, build and dot folders are skipped.
+- **Writes:** `CODEMAP.md` in that same folder. Nothing else.
+- **Network and models:** none. No model calls and no other services.
+
 ## License and commercial use
 
 Free to use, copy and modify for non-commercial purposes, under the PolyForm Noncommercial License 1.0.0 (see `LICENSE`). For commercial use, contact the author for a separate license.
